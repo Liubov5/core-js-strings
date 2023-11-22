@@ -1,9 +1,11 @@
 <script>
-   function getFirstChar(value) {
-    if(value.length == 0){
-        return '';
+   function removeFirstOccurrences(str, value) {
+        
+        let index = str.indexOf(value);
+        let arr = str.split("");
+        arr.splice(index, value.length);
+        //return arr.join(' ')
+        return arr.join('');
     }
-        return value[0];
-    }
-    console.log(getFirstChar(''))
+    console.log(removeFirstOccurrences('I like legends', 'end'))
 </script>
