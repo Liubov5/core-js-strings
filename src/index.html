@@ -1,11 +1,10 @@
 <script>
-   function removeFirstOccurrences(str, value) {
-        
-        let index = str.indexOf(value);
-        let arr = str.split("");
-        arr.splice(index, value.length);
-        //return arr.join(' ')
-        return arr.join('');
+    function formatTime(minutes, seconds) {
+        minutes = minutes.toString();
+        seconds = seconds.toString();
+        let sec = seconds.padStart(2,'0');
+        let min= minutes.padStart(2,'0');
+        return min.concat(":",sec)
     }
-    console.log(removeFirstOccurrences('I like legends', 'end'))
+    console.log(formatTime(0,0))
 </script>
