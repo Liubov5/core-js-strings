@@ -1,8 +1,14 @@
 <script>
-function getStringFromTemplate(firstName, lastName) {
-  const fullName = firstName.concat(' ', lastName);
-  return 'Hello, '.concat(fullName);;
+function extractNameFromTemplate(value) {
+  let arr = value.split(' ');
+  let index = arr.indexOf('Hello,')
+  arr.splice(index,1);
+    let arr2 = arr.join(' ').split('');
+    
+    let index2 = arr2.indexOf("!");
+    arr2.splice(index2,1);
+    return arr2.join('')
 }
 
-console.log(getStringFromTemplate('John','Doe'))
+console.log(extractNameFromTemplate('Hello, John Doe!'))
 </script>
