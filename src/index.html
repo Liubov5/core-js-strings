@@ -1,12 +1,8 @@
 <script>
-function findLongestWord(sentence) {
-  const arr = sentence.split(' ');
-  const numbers = [];
-  for (let i = 0; i < arr.length; i += 1) {
-    numbers.push(arr[i].length);
-  }
-  return Math.max(...numbers);
+function getStringFromTemplate(firstName, lastName) {
+  const fullName = firstName.concat(' ', lastName);
+  return 'Hello, '.concat(fullName);;
 }
 
-console.log(findLongestWord('The quick brown fox'))
+console.log(getStringFromTemplate('John','Doe'))
 </script>
