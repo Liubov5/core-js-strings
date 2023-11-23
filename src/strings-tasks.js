@@ -341,8 +341,9 @@ function countVowels(str) {
   }
 
   let summ = 0;
-  Object.keys(vowels).forEach(function (key) {
+  Object.keys(vowels).forEach((key) => {
     summ += vowels[key];
+    return summ;
   });
   return summ;
 }
