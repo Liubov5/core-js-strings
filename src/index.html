@@ -1,29 +1,12 @@
 <script>
-   function countVowels(str) {
-    const vowels = {
-        a: 0,
-        e: 0,
-        i: 0,
-        o: 0,
-        u: 0,
-        y: 0,
-        A: 0,
-        E: 0,
-        I: 0,
-        O: 0,
-        U: 0,
-        Y: 0,
-    };
-    for (let i = 0; i < str.length; i += 1) {
-        if (Object.prototype.hasOwnProperty.call(vowels, str[i])){
-            vowels[str[i]] += 1;
-        }
-    }
-
-    let summ = 0;
-    Object.keys(vowels).forEach((key) => (summ += vowels[key]));
-    return summ;
+function findLongestWord(sentence) {
+  const arr = sentence.split(' ');
+  const numbers = [];
+  for (let i = 0; i < arr.length; i += 1) {
+    numbers.push(arr[i].length);
+  }
+  return Math.max(...numbers);
 }
 
-console.log(countVowels('lolololoaaaeeff'))
+console.log(findLongestWord('The quick brown fox'))
 </script>
