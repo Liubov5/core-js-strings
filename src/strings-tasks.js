@@ -285,8 +285,8 @@ function reverseString(str) {
  *   orderAlphabetically('textbook') => 'bekoottx'
  *   orderAlphabetically('abc123xyz') => '123abcxyz'
  */
-function orderAlphabetically(/* str */) {
-  throw new Error('Not implemented');
+function orderAlphabetically(str) {
+  return str.split('').sort().join('');
 }
 
 /**
@@ -301,13 +301,13 @@ function orderAlphabetically(/* str */) {
  *   containsSubstring('JavaScript is Fun', 'Python') => false
  *   containsSubstring('12345', '34') => true
  */
-function containsSubstring(/* str, substring */) {
-  throw new Error('Not implemented');
+function containsSubstring(str, substring) {
+  return str.includes(substring);
 }
 
 /**
  * Returns the number of vowels in the string.
- * Vowels: 'a', 'e', 'i', 'o', 'u', 'y', 'A', 'E', 'I', 'O', 'U', 'Y'.
+ * Vowels: 'a', 'e', .
  *
  * @param {string} str - The input string.
  * @return {number} - The number of vowels in the string.
@@ -319,8 +319,32 @@ function containsSubstring(/* str, substring */) {
  *   countVowels('aEiOu') => 5
  *   countVowels('XYZ') => 1
  */
-function countVowels(/* str */) {
-  throw new Error('Not implemented');
+function countVowels(str) {
+  const vowels = {
+    a: 0,
+    e: 0,
+    i: 0,
+    o: 0,
+    u: 0,
+    y: 0,
+    A: 0,
+    E: 0,
+    I: 0,
+    O: 0,
+    U: 0,
+    Y: 0,
+  };
+  for (let i = 0; i < str.length; i += 1) {
+    if (Object.prototype.hasOwnProperty.call(vowels, str[i])) {
+      vowels[str[i]] += 1;
+    }
+  }
+
+  let summ = 0;
+  Object.keys(vowels).forEach(function (key) {
+    summ += vowels[key];
+  });
+  return summ;
 }
 
 /**
