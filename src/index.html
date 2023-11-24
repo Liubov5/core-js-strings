@@ -1,14 +1,8 @@
 <script>
-function extractNameFromTemplate(value) {
-  let arr = value.split(' ');
-  let index = arr.indexOf('Hello,')
-  arr.splice(index,1);
-    let arr2 = arr.join(' ').split('');
-    
-    let index2 = arr2.indexOf("!");
-    arr2.splice(index2,1);
-    return arr2.join('')
+function getCardId(value) {
+  const arr = ['A♣','2♣','3♣','4♣','5♣','6♣','7♣','8♣','9♣','10♣','J♣','Q♣','K♣','A♦','2♦','3♦','4♦','5♦','6♦','7♦','8♦','9♦','10♦','J♦','Q♦','K♦','A♥','2♥','3♥','4♥','5♥','6♥','7♥','8♥','9♥','10♥','J♥','Q♥','K♥','A♠','2♠','3♠','4♠','5♠','6♠','7♠','8♠','9♠','10♠','J♠','Q♠','K♠'];
+  return arr.indexOf(value);
 }
 
-console.log(extractNameFromTemplate('Hello, John Doe!'))
+console.log(getCardId('3♣'))
 </script>
